@@ -21,6 +21,13 @@ class QueryProcessorTest {
 			fail("The QueryProcessor does not know about Shakespeare.");
 		}
 	}
+	@Test
+	void testName() {
+		String actual = queryProcessor.process("name");
+		if (!actual.contains("Pandorai")) {
+			fail("The QueryProcessor does not know about Shakespeare.");
+		}
+	}
 
 	@Test
 	void isNotCaseSensitive() {
