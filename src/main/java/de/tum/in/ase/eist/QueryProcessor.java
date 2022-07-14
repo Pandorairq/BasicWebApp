@@ -14,11 +14,22 @@ public class QueryProcessor {
         } else if (query.contains("name")) {
            return "Pandorairq";
         }
-        else if (query.contains("What is 20 + 20")) {
-            return "40";
+        else if (query.contains("what is")) {
+            int i = query.indexOf("is%20");
+            String str = query.substring(i + 5,i + 7);
+            String str2 = query.substring(i + 8,i + 10);
+            int a = Integer.parseInt(str);
+            int b = Integer.parseInt(str2);
+            return Integer.toString((a + b));
         }
         else if(query.contains("which of the following numbers is the largest")) {
-            return  "20846";
+            String[] strings = query.split(",%20");
+            int i = query.indexOf(":");
+            String str = query.substring(i + 5,i + 7);
+            String str2 = query.substring(i + 8,i + 10);
+            int a = Integer.parseInt(str);
+            int b = Integer.parseInt(str2);
+            return Integer.toString((a + b));
         }
         else { // TODO extend the programm here
             return "";
